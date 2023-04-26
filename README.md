@@ -1,11 +1,11 @@
-Alumno														
+# Alumno														
 	Nombre								José García Fernández					
 	Usuario								jgarciaferrnandez8					
 	Email								jgarciaferrnandez8@uoc.edu					
-Direcciones WEB														
+# Direcciones WEB														
 	Fuente								José-García-Fernández/heramientas-1-pec1 (github.com)					
 	Ejecución								Nazaré (jose-garcia-fernadez.github.io)					
-Notas realización de la práctica:														
+# Notas realización de la práctica:														
 	Compilación modo desarrollo								npm run sdz					
 	Compilación modo producción								npm run sp					
 	Para crear copias seguridad								npm run copia					
@@ -15,11 +15,11 @@ Notas realización de la práctica:
 									@function alturafuente($h){@return calc( 1rem * $h/2 + 1vw * $h/2 );}					
 									La utilizo para los títulos,  párrafos, listas, etc… en el fichero variables.scss, de esta forma todo el programa tiene la misma altura de fuentes de letras.					
 									También la utilizo para los margin y padding.					
-Carpetas														
+# Carpetas														
 	Destino								z:\destino\					
 									En este disco y carpeta es donde se genera el programa para su ejecución (Es un disco virtual de memoria RAM muy rápido y sin desgaste)					
 	Proyecto								c:\4UOC\PEC1\					
-		Ficheros Raíz proyecto												
+#		Ficheros Raíz proyecto												
 				.editorconfig					Configuración editor VSC					
 				.gitignore					Carpetas y ficheros que no tiene que copiar git					
 				.posthtmlrc					Fichero de configuración posthtml					
@@ -37,60 +37,60 @@ Carpetas
 				d.cmd					Para cambiar las textos-etiquetas de los ficheros html por los textos situados en cambia-variable.js					
 				copia.cmd					Para realizar copias de seguridad de los fuentes a 3 discos distintos, uno de ellos externo (USB)					
 				compimirfotos.cmd					Comprime las fotos y las distribuye en carpetas fuera del proyecto					
-		/src							En esta carpeta se encuentran todos los fuentes					
-				FotosParcel.xlsm					Hoja de cálculo para generar el contenido de los ficheros cambia-variable.js y listados.js					
-				index.html					Fichero de arranque del programa contiene 3 textos y diapositivas de fotos y videos					
-				010categoria.html					Contiene una lista de descripción con 5 ciudades-detalle, hay enlaces a páginas web externas y enlaces a páginas web internas: 011detalle-alcobasa.html, 012detalle-fatima.html, 013detalle-nazare.html, 014detalle-obidos.html y 015detalle-sintra.html.					
-				020presentacion.html					Una breve descripción, dos fotografías y un video de Nazaré					
-				030enlaces.html					Lista de fuentes de donde he sacado imágenes, los textos y una lista de agradecimientos (mirar el agradecimiento a mi esposa)					
-			0100detalle-base.html						Antes de compilar el proyecto copio este fichero como: 011detalle-alcobasa.html, 012detalle-fatima.html, 013detalle-Nazaré.html, 014detalle-obidos.html y 015detalle-sintra.html. Una vez copiados cambio el nombre de Nazaré por el nombre de otra ciudad, de esta forma cuando tengo que modificar algo, solo modifico este fichero (0100detalle-base.html). Los textos de cada ciudad son modificados en la carpeta destino por cambia-lorem-por-buenos-en-destino.js. 					
+#		/src							En esta carpeta se encuentran todos los fuentes					
+##				FotosParcel.xlsm					Hoja de cálculo para generar el contenido de los ficheros cambia-variable.js y listados.js					
+##				index.html					Fichero de arranque del programa contiene 3 textos y diapositivas de fotos y videos					
+##				010categoria.html					Contiene una lista de descripción con 5 ciudades-detalle, hay enlaces a páginas web externas y enlaces a páginas web internas: 011detalle-alcobasa.html, 012detalle-fatima.html, 013detalle-nazare.html, 014detalle-obidos.html y 015detalle-sintra.html.					
+##				020presentacion.html					Una breve descripción, dos fotografías y un video de Nazaré					
+##				030enlaces.html					Lista de fuentes de donde he sacado imágenes, los textos y una lista de agradecimientos (mirar el agradecimiento a mi esposa)					
+##			0100detalle-base.html						Antes de compilar el proyecto copio este fichero como: 011detalle-alcobasa.html, 012detalle-fatima.html, 013detalle-Nazaré.html, 014detalle-obidos.html y 015detalle-sintra.html. Una vez copiados cambio el nombre de Nazaré por el nombre de otra ciudad, de esta forma cuando tengo que modificar algo, solo modifico este fichero (0100detalle-base.html). Los textos de cada ciudad son modificados en la carpeta destino por cambia-lorem-por-buenos-en-destino.js. 					
 									De esta forma, con un solo fichero original puedo tener de 1 a infinitas ciudades. 					
-				011detalle-alcobasa.html					Ficheros copia de 0100detalle-base.html,  al crearlos modifico los textos y la ciudad.					
-				012detalle-fatima.html										
-				013detalle-nazare.html										
-				014detalle-obidos.html										
-				015detalle-sintra.html										
+##				011detalle-alcobasa.html					Ficheros copia de 0100detalle-base.html,  al crearlos modifico los textos y la ciudad.					
+##				012detalle-fatima.html										
+##				013detalle-nazare.html										
+##				014detalle-obidos.html										
+##				015detalle-sintra.html										
 														
-			Ficheros Parciales HTML						Todos comienzan con subrayado					
-				_11cabecera-páginas.html					Contiene el header, el cual esta compuesto por el icono de Nazaré y el menu principal, se añade al principio a todos los ficheros html 					
-				_12pie-páginas.html					Contiene footer ( el pie de página ) , éste está compuesto por un link a una página web con  a las previsiones de olas de Nazaré, una entrada de email, botón, iconos de Facebook, Instagram y WhatsApp, link y mi @ (me ha hecho gracia poner mi año de nacimiento)					
-				_13dipositivas_horizontales.html					Estos tres ficheros controlan las diapositivas, cuando son llamados el programa padre le pasa la ciudad que hay que reproducir, Ejecuta el siguiente script <script type="module" src="/src/12-js/d/diapositiva_video--{{ciudad}}.js"></script>. Cada ciudad tiene su propio JS, para fotos horizontales, fotos verticales y videos. Dichos JS son copias modificadas de diapositiva_fotos-horizontal-Nazaré.js, diapositiva_fotos-vertical-Nazaré.js y diapositiva_video-Nazaré.js. En total habrá 3 * N.º ciudades ficheros JS,  estos ficheros los crea ejecuta-cmd.js antes de compilar.					
-				_14dipositivas_verticales.html										
-				_15dipositivas_videos.html										
-				_16dipositivas_fotos.html					No lo utilizo, es para sustituir ha  _13dipositivas_horizontales.html y a _14dipositivas_verticales.html					
+#			Ficheros Parciales HTML						Todos comienzan con subrayado					
+##				_11cabecera-páginas.html					Contiene el header, el cual esta compuesto por el icono de Nazaré y el menu principal, se añade al principio a todos los ficheros html 					
+##				_12pie-páginas.html					Contiene footer ( el pie de página ) , éste está compuesto por un link a una página web con  a las previsiones de olas de Nazaré, una entrada de email, botón, iconos de Facebook, Instagram y WhatsApp, link y mi @ (me ha hecho gracia poner mi año de nacimiento)					
+##				_13dipositivas_horizontales.html					Estos tres ficheros controlan las diapositivas, cuando son llamados el programa padre le pasa la ciudad que hay que reproducir, Ejecuta el siguiente script <script type="module" src="/src/12-js/d/diapositiva_video--{{ciudad}}.js"></script>. Cada ciudad tiene su propio JS, para fotos horizontales, fotos verticales y videos. Dichos JS son copias modificadas de diapositiva_fotos-horizontal-Nazaré.js, diapositiva_fotos-vertical-Nazaré.js y diapositiva_video-Nazaré.js. En total habrá 3 * N.º ciudades ficheros JS,  estos ficheros los crea ejecuta-cmd.js antes de compilar.					
+##				_14dipositivas_verticales.html										
+##				_15dipositivas_videos.html										
+##				_16dipositivas_fotos.html					No lo utilizo, es para sustituir ha  _13dipositivas_horizontales.html y a _14dipositivas_verticales.html					
 														
-		/11-scss							Es la carpeta donde están los ficheros SCSS					
-				inicio.scss					Contiene los import de los ficheros _*.scss					
-				_debug.scss					Contiene $debug:none; o $debug:inline; antes de compilar ejecuto que se copie _debug-inline.scss o _debug-none.scss sobre este fichero					
-				_debug-inline.scss					Para que se vean ciertas etiquetas y colores de fondo saltones, versión desarrollo					
-				_debug-none.scss					Lo contrario que _debug-inline.scss, versión producción					
-				_variables.scss					Para todos los ficheros html					
-				_index.scss					Para el fichero index.html					
-				_010categoria.scss					Para el fichero 010caregoria.html					
-				_020presentacion.scss					Para el fichero 020presentacion.html					
-				_030enlaces.scss					Para el fichero 030enlaces.html					
-				_11cabecera-de-páginas.scss					Para el fichero _11cabecera-páginas.html (Header)					
-				_12pie-de-páginas.scss					Para el fichero _12pie-de-páginas.html (Footer)					
-				_13-14-15diapositivas.scss					Para todas las diapositivas de los ficheros: _13dipositivas_horizontales.html, _14dipositivas_verticales.html y _15dipositivas_videos.html					
-				inicio.css.map					Lo genera el compilador scss, sirve para developers tools					
+#		/11-scss							Es la carpeta donde están los ficheros SCSS					
+##				inicio.scss					Contiene los import de los ficheros _*.scss					
+##				_debug.scss					Contiene $debug:none; o $debug:inline; antes de compilar ejecuto que se copie _debug-inline.scss o _debug-none.scss sobre este fichero					
+##				_debug-inline.scss					Para que se vean ciertas etiquetas y colores de fondo saltones, versión desarrollo					
+##				_debug-none.scss					Lo contrario que _debug-inline.scss, versión producción					
+##				_variables.scss					Para todos los ficheros html					
+##				_index.scss					Para el fichero index.html					
+##				_010categoria.scss					Para el fichero 010caregoria.html					
+##				_020presentacion.scss					Para el fichero 020presentacion.html					
+##				_030enlaces.scss					Para el fichero 030enlaces.html					
+##				_11cabecera-de-páginas.scss					Para el fichero _11cabecera-páginas.html (Header)					
+##				_12pie-de-páginas.scss					Para el fichero _12pie-de-páginas.html (Footer)					
+##				_13-14-15diapositivas.scss					Para todas las diapositivas de los ficheros: _13dipositivas_horizontales.html, _14dipositivas_verticales.html y _15dipositivas_videos.html					
+##				inicio.css.map					Lo genera el compilador scss, sirve para developers tools					
 														
-		12-js\							Contiene todos los ficheros JS del programa					
-				mi.js					Para escribir las coordenadas del ratón el ancho y alto de la ventana del explorador en el título. Haciendo zoom con la rueda del ratón del 30% a 500% puedo hacer la que la ventana del explorador pase de ancho 200 pixeles a 5000 pixeles, es muy cómodo, para ver como se comporta con distintos anchos el programa. 					
-				main.js					Escribe Hola mundo					
-				listados.js					Contiene arrays con los datos, de las fotografías y videos, los utilizan los ficheros diapositiva_fotos-Nazaré.js,diapositiva_fotos-vertical-Nazaré.js y diapositiva_fotos-horizontal-Nazaré.js. Estos datos están creados con la hoja de cálculo FotosParcel.xlsm					
-				ejecuta-debug-none.js					Ejecuta debug-none.cmd, modo producción					
-				ejecuta-debug-inline.js					Ejecuta debug-inline.cmd modo desarrollo					
-				cambia-variable.js					Contiene una array para cambiar los textos-etiquetas por textos que verá el usuario					
-				cambia-lorem-por-buenos-en-origen.js					Para cambiar en los ficheros fuente los textos-etiquetas por textos usuario					
-				cambia-buenos-por-lorem-en-origen.js					Para revertir el proceso anterior					
-				cambia-lorem-por-buenos-en-destino.js					Para cambiar en los ficheros destino los textos-etiquetas por textos usuario. Si estoy en modo desarrollo lo ejecuto en otra ventana de CMD					
-			d_origen\						Carpeta que contiene los ficheros origen de diapositivas 					
-				diapositiva_video-Nazaré.js					Controla la carga de videos, la ciudad por defecto es nazaré					
-				diapositiva_fotos-vertical-Nazaré.js					Controla la carga de las fotos verticales, la ciudad por defecto es nazaré					
-				diapositiva_fotos-horizontal-Nazaré.js					Controla la carga de las fotos verticales, la ciudad por defecto es nazaré					
-				diapositiva_fotos-Nazaré.js					No lo utilizo, es para controlar las fotos horizontales y verticales					
-			d\											
-				diapositiva_fotos--alcobasa.js					Son ficheros copiados de d_origen y modificados según la ciudad. La secuencia de ejecución es: cuando se abre por ejemplo el fichero 013detalle-nazare.html. Cargo una sola fotografía horizontal y vertical y un solo video. Al pulsar las fechas o al cabo de 5 segundos el programa elige la siguiente foto/video y lo carga. Según el ancho de la ventana que aloja las fotos o videos, cargo un tamaño u otro. Ejemplo para anchos mayores de 1000 pixeles, cargo fotografías de 900 pixeles, para anchos de 600 a 1000 pixeles cargo fotografías de 600 pixeles, para anchos menores de 600 pixeles cargo fotografías de 300 pixeles. Con los videos hago una cosa parecida.					
+#		12-js\							Contiene todos los ficheros JS del programa					
+##				mi.js					Para escribir las coordenadas del ratón el ancho y alto de la ventana del explorador en el título. Haciendo zoom con la rueda del ratón del 30% a 500% puedo hacer la que la ventana del explorador pase de ancho 200 pixeles a 5000 pixeles, es muy cómodo, para ver como se comporta con distintos anchos el programa. 					
+##				main.js					Escribe Hola mundo					
+##				listados.js					Contiene arrays con los datos, de las fotografías y videos, los utilizan los ficheros diapositiva_fotos-Nazaré.js,diapositiva_fotos-vertical-Nazaré.js y diapositiva_fotos-horizontal-Nazaré.js. Estos datos están creados con la hoja de cálculo FotosParcel.xlsm					
+##				ejecuta-debug-none.js					Ejecuta debug-none.cmd, modo producción					
+##				ejecuta-debug-inline.js					Ejecuta debug-inline.cmd modo desarrollo					
+##				cambia-variable.js					Contiene una array para cambiar los textos-etiquetas por textos que verá el usuario					
+##				cambia-lorem-por-buenos-en-origen.js					Para cambiar en los ficheros fuente los textos-etiquetas por textos usuario					
+##				cambia-buenos-por-lorem-en-origen.js					Para revertir el proceso anterior					
+##				cambia-lorem-por-buenos-en-destino.js					Para cambiar en los ficheros destino los textos-etiquetas por textos usuario. Si estoy en modo desarrollo lo ejecuto en otra ventana de CMD					
+#			d_origen\						Carpeta que contiene los ficheros origen de diapositivas 					
+##				diapositiva_video-Nazaré.js					Controla la carga de videos, la ciudad por defecto es nazaré					
+##				diapositiva_fotos-vertical-Nazaré.js					Controla la carga de las fotos verticales, la ciudad por defecto es nazaré					
+##				diapositiva_fotos-horizontal-Nazaré.js					Controla la carga de las fotos verticales, la ciudad por defecto es nazaré					
+##				diapositiva_fotos-Nazaré.js					No lo utilizo, es para controlar las fotos horizontales y verticales					
+#			d\											
+##				diapositiva_fotos--alcobasa.js					Son ficheros copiados de d_origen y modificados según la ciudad. La secuencia de ejecución es: cuando se abre por ejemplo el fichero 013detalle-nazare.html. Cargo una sola fotografía horizontal y vertical y un solo video. Al pulsar las fechas o al cabo de 5 segundos el programa elige la siguiente foto/video y lo carga. Según el ancho de la ventana que aloja las fotos o videos, cargo un tamaño u otro. Ejemplo para anchos mayores de 1000 pixeles, cargo fotografías de 900 pixeles, para anchos de 600 a 1000 pixeles cargo fotografías de 600 pixeles, para anchos menores de 600 pixeles cargo fotografías de 300 pixeles. Con los videos hago una cosa parecida.					
 				diapositiva_fotos--fatima.js										
 				diapositiva_fotos-horizontal--alcobasa.js										
 				diapositiva_fotos-horizontal--fatima.js										
@@ -111,7 +111,7 @@ Carpetas
 				diapositiva_video--obidos.js										
 				diapositiva_video--sintra.js										
 														
-			13-imagenes\no-propias\						Contiene los ficheros capturados de internet					
+#			13-imagenes\no-propias\						Contiene los ficheros capturados de internet					
 			13-imagenes\propias\						Contiene las fotos y videos hechas por mi esposa y por mí					
 				alcobasa\					Fotos y videos alcobas					
 					mp4\				Videos mp4					
@@ -131,12 +131,12 @@ Carpetas
 				sintra\										
 														
 														
-Herramientas														
+# Herramientas														
 	Hardware													
 		 Proveedor de Red							Móvil 5G					
 		 Ordenador							Portátil y ordenador de sobremesa					
 		 Pantallas							Monitores de 5k , 4k, 2k y 1k					
-	Software Externo													
+#	Software Externo													
 		Sistema Operativo							Windows 10 y 11					
 			2. Accesos directos a programas											
 				CMD										
@@ -144,7 +144,7 @@ Herramientas
 					Iniciar en				C:\4UOC\PEC1\ Carpeta del proyecto					
 				VSC					C:\Users\renfe\AppData\Local\Programs\Microsoft VS Code\Code.exe "C:\4UOC\PEC1\"					
 				Comentario					Si tengo varios proyectos, creo varias parejas de iconos.					
-		Programas Externos												
+#		Programas Externos												
 			Editor de textos											
 				VSC Extensiones Stylint					Errores css, js etc					
 			Imágenes											
@@ -157,7 +157,7 @@ Herramientas
 									Es un programa que permite recortar un video, quitar el sonido y convertirlo a formato HTML5 (mp4)					
 									Admite de 10 en 10 ficheros, los he convertido a 3 resoluciones distintas, con el ordenador de sobremesa, que es más potente.					
 									Los he convertido en 640x360, 420x 236 y 312x176, el programa js al visualizar los videos elige qué tamaño hay que visualizar dependiendo del tamaño de la ventana					
-	Programación													
+#	Programación													
 		Programas NO propios												
 			Node						Git es un software de control de versiones diseñado por Linus Torvalds					
 			git						Compilador html, css ,scss, js etc…. Es el motor.					
@@ -169,7 +169,7 @@ Herramientas
 			node-replace											
 									La idea es escribir textos-marcas en los  ficheros html, crear una variable en JS en el  fichero listados.js, la marca y su traducción . He creado un programa en JS, que lee la variable, ejecuta node_replace, con el fichero, la marca y la traducción de la variable (array) situada en listados.js					
 									El fichero, la marca y la traducción, las escribo en la hoja de cálculo FotosParcel.xlsm, pestaña traducir, que crea la variable, la cual la pego en el fichero listados.js					
-		Programas propios												
+#		Programas propios												
 			Visual Basic para Aplicaciones de Excel											
 					 FotosParcel.xlsm									
 									Esta hoja de cálculo contiene un programa en VBA, que lee ficheros de fotografías de una carpeta y los copia a carpetas del proyecto, según ciudad, tamaño y  si es horizontal y vertical.					
@@ -194,7 +194,7 @@ Herramientas
 				Después de ejecutar Parcel										
 				cambia-lorem-por-buenos-en-destino.js					Este programa hace lo mismo que cambia-lorem-por-buenos-en-origen.js, lee el mismo array situado en  cambia-variable.js y cambia las etiquetas en la carpeta destino.					
 									Si parcel esta en modo vigilante de cambios, lo que hago es abrir otro entorno CMD, y ejecuto npm run lorem-por-buenos-en-destino, y refresco el navegador					
-			Explicación de la practica											
+#	Explicación de la practica											
 						index.html			Carga _11cabecera-páginas.html el cual contiene el header					
 									Diapositivas fotografías horizontales y diapositivas de videos de Nazaré.					
 									Carga _12pie-páginas.html el cual contiene el pie de página					
