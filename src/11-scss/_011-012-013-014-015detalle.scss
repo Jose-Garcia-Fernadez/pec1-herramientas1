@@ -1,0 +1,22 @@
+
+.detalle {
+  line-height: 1.5;      
+  p{ 
+    padding-right: alturafuente(0.5);
+    padding-left: alturafuente(0.5);
+    
+  }
+  dl {    
+    margin-left: alturafuente(1);
+    > dt {
+      font-weight: bold;    
+    }
+    > dd {  
+      margin-left: alturafuente(1);
+      margin-right: alturafuente(1);
+      }
+    }
+  }
+
+
+

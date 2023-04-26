@@ -3,7 +3,8 @@ const replace = require("node-replace"); /* npm install node-replace --save */
 const fs = require('fs');
 copiar_remplazar('alcobasa','Alcobaça','011detalle-alcobasa.html');
 copiar_remplazar('fatima','Fátima','012detalle-fatima.html');
-copiar_remplazar('nazare','Nazaré','013detalle-nazare.html');
+//copiar_remplazar('nazare','Nazaré','013detalle-nazare.html');
+copiar_remplazar('nazaree','Nazaré','013detalle-nazaree.html');
 copiar_remplazar('obidos','Óbidos','014detalle-obidos.html');
 copiar_remplazar('sintra','Sintra','015detalle-sintra.html');
 

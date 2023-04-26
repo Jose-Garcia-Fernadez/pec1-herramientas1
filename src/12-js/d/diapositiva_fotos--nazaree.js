@@ -1,67 +1,64 @@
-// Internet Explorer 10 y versiones anteriores nonazare_1 admiten el modo de pantalla completa./*div.addEventListener("click", () =>    { close_FullScreen();}) //function close_FullScreen() {closeFullscreen(div);}*/
+// Internet Explorer 10 y versiones anteriores no admiten el modo de pantalla completa./*div.addEventListener("click", () =>    { close_FullScreen();}) //function close_FullScreen() {closeFullscreen(div);}*/
 // Variables globales y  carga Inicial 
-
-import {l,tiempo_carga,escribir_tiempo} from '/src/12-js/listados.js';
+import {l} from '/src/12-js/listados.js';
 import {debug} from '/src/12-js/debug.js';
+import { excludeList } from 'node-replace/bin/shared-options';
 // Variables globales de este fichero
-var ciudad='nazare',ciudadT="Nazaré"; 
+var ciudad='nazaree'; 
 var i_listado = 0;
-var div=document.getElementById('div-hor-'+ ciudad);
-var img=document.getElementById('img-hor-'+ ciudad);
-var h2=document.getElementById('h2-hor-'+ ciudad);
-var h3=document.getElementById('h3-hor-'+ ciudad);
-
+var div=document.getElementById('div-fot-'+ ciudad);
+var img=document.getElementById('img-fot-'+ ciudad);
+var h2=document.getElementById('h2-fot-'+ ciudad);
+var h3=document.getElementById('h3-fot-'+ ciudad);
 // Asignar funciones al navegador
+if (div==null) alert ('div Null');if (img==null) alert ('img Null');if (h2==null) alert ('h2 Null');if (h3==null) alert ('h3 Null');
+
 window.onload = ()=>{document.write(l);document.write(debug);}
-window.siguiente_horizontal_nazare=cargar_nazare_h;  
-div.addEventListener("dblclick", () => { pantallaCompleta_nazare();})
+window.siguiente_nazaree=cargar_nazaree;  
+div.addEventListener("dblclick", () => { pantallaCompleta_nazaree();})
 
 // Ejecutar  CambiarAutomaticamente
 CambiarAutomaticamente();
 
 // Funciones que tienen que ser llamadas
 function CambiarAutomaticamente() { 
-  cargar_nazare_h(1,1);  
-  setTimeout(CambiarAutomaticamente, 5000);
+  var t=Math.random()*2000+3000;
+  var inc=Math.floor( Math.random()*3+1);
+  cargar_nazaree(inc,1);  
+  setTimeout(CambiarAutomaticamente, t);
 }
-function Normaliza(s) {
-  var str=s.trim();
-  return (str.charAt(0).toUpperCase() + str.slice(1));
-}
-
-function cargar_nazare_h(incremento,parametro){
-  
+function cargar_nazaree(incremento,parametro){
   var w=img.clientWidth,h=img.clientHeight;
-  var listado, comentario,c,tiempo; 
-  
+  var listado, comentario,c,hv;
   c=" pequeño ";
-  //comentario= l.comentario_1.nazaree_1_comentario; 
-
-  listado=   l.fotos.nazaree_png_300_1;  
-  if (w >  600) { listado=  l.fotos.nazaree_png_600_1;  c= " mediana " ; }
-  if (w > 1000) { listado=  l.fotos.nazaree_png_900_1;  c= " grande " ; }
+  if (h>w) {
+    hv=' vertical ';
+ //   comentario= l.comentario_6.nazaree_6_comentario; 
+    listado=    l.fotos.nazaree_png_300_6;  
+    if (h >  600) { listado=  l.fotos.nazaree_png_600_6;  c= " mediana " ; }
+    if (h > 1000) { listado=  l.fotos.nazaree_png_900_6;  c= " grande " ;  }
+  }else {
+    hv=' horizontal ';
+  //  comentario= l.comentario_1.nazaree_1_comentario; 
+    listado=   l.fotos.nazaree_png_300_1;  
+    if (w >  600) { listado=  l.fotos.nazaree_png_600_1;  c= " mediana " ; }
+    if (w > 1000) { listado=  l.fotos.nazaree_png_900_1;  c= " grande " ;  }    
+  }
   
   switch (parametro) {
     case 1:
       i_listado=i_listado+incremento;
       if (i_listado>(listado.length-1)) i_listado=0;
-      if (i_listado<0) i_listado=listado.length-1; 
-      tiempo=(new Date()).getTime() ;                       
-      img.onload= () =>  {
-        tiempo =(new Date()).getTime() -tiempo;
-        escribir_tiempo(tiempo);        
-      } 
+      if (i_listado<0) i_listado=listado.length-1;       
       img.src=listado[i_listado];      
-      //img.alt= comentario[i_listado] + ' ' + i_listado;
-      h2.innerHTML= "Fotos de "+ ciudadT + " " + (i_listado +1) + " de " +listado.length ;//+ " carga " +  tiempo_carga + "msg";
-      h3.innerHTML="Presentación: fotos de Nazaré "
-      //h3.innerHTML=Normaliza(comentario[i_listado]); //+ ' ' + i_listado +  "(horizontal"  +  c + ")" + " w=" + w + " h=" + h;  
-
+  //    img.alt= comentario[i_listado] + ' ' + i_listado;
+      h2.innerHTML='Presentación de Fotos de '+ ciudad;
+     // h3.innerHTML=comentario[i_listado] + ' ' + i_listado +  "(" + hv + c + ")" +" w=" + w + "h=" + h;            
       break;
     case 2: break; // ????
   }  
 }
-function pantallaCompleta_nazare() {  
+function pantallaCompleta_nazaree() {  
   var s={ navigationUI: "hide" };
   if (div.requestFullscreen)      { div.requestFullscreen(s); return;}
   if (div.webkitRequestFullscreen){ div.webkitRequestFullscreen(s);return;} //safari
@@ -127,18 +124,18 @@ div.appendChild(p); */
 function CambiarAutomaticamente() { 
   var t=Math.random()*2000+3000;
   var inc=Math.floor( Math.random()*3+1);
-  cargar_nazare_h(inc,1);  
+  cargar_nazaree(inc,1);  
   setTimeout(CambiarAutomaticamente, t);
 }
 
-function cargar_nazare_h(incremento,parametro){
+function cargar_nazaree(incremento,parametro){
   var w=img.clientWidth;
   var listado, comentario,c;  
   c=" pequeño ";
-  comentario= l.comentario_1.nazare_1; 
-  listado=   l.fotos.nazare_png_300_1;  
-  if (w >  600) { listado=  l.fotos.nazare_png_100_1;  c= " mediana " ; }
-  if (w > 1000) { listado=  l.fotos.nazare_png_900_1;  c= " grande " ; }
+  comentario= l.comentario_6.nazaree_6; 
+  listado=   l.fotos.nazaree_png_300_6;  
+  if (w >  600) { listado=  l.fotos.nazaree_png_600_6;  c= " mediana " ; }
+  if (w > 1000) { listado=  l.fotos.nazaree_png_900_6;  c= " grande " ; }
   
   switch (parametro) {
     case 1:

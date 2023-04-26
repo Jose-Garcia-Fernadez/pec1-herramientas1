@@ -33,13 +33,13 @@ function cargar_sintra(incremento,parametro){
   c=" pequeño ";
   if (h>w) {
     hv=' vertical ';
-    comentario= l.comentario_6.sintra_6; 
+ //   comentario= l.comentario_6.sintra_6_comentario; 
     listado=    l.fotos.sintra_png_300_6;  
     if (h >  600) { listado=  l.fotos.sintra_png_600_6;  c= " mediana " ; }
     if (h > 1000) { listado=  l.fotos.sintra_png_900_6;  c= " grande " ;  }
   }else {
     hv=' horizontal ';
-    comentario= l.comentario_1.sintra_1; 
+  //  comentario= l.comentario_1.sintra_1_comentario; 
     listado=   l.fotos.sintra_png_300_1;  
     if (w >  600) { listado=  l.fotos.sintra_png_600_1;  c= " mediana " ; }
     if (w > 1000) { listado=  l.fotos.sintra_png_900_1;  c= " grande " ;  }    
@@ -51,9 +51,9 @@ function cargar_sintra(incremento,parametro){
       if (i_listado>(listado.length-1)) i_listado=0;
       if (i_listado<0) i_listado=listado.length-1;       
       img.src=listado[i_listado];      
-      img.alt= comentario[i_listado] + ' ' + i_listado;
+  //    img.alt= comentario[i_listado] + ' ' + i_listado;
       h2.innerHTML='Presentación de Fotos de '+ ciudad;
-      h3.innerHTML=comentario[i_listado] + ' ' + i_listado +  "(" + hv + c + ")" +" w=" + w + "h=" + h;            
+     // h3.innerHTML=comentario[i_listado] + ' ' + i_listado +  "(" + hv + c + ")" +" w=" + w + "h=" + h;            
       break;
     case 2: break; // ????
   }  

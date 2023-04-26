@@ -23,14 +23,17 @@ function CambiarAutomaticamente() {
   cargar_sintra_video(1,1);  
   setTimeout(CambiarAutomaticamente,tiempo_video*1000);
 }
+function Normaliza(s) {
+  var str=s.trim();
+  return (str.charAt(0).toUpperCase() + str.slice(1));
+}
+
 function cargar_sintra_video(incremento,parametro){
   var w=video.clientWidth,h=video.clientHeight;
-  var listado, comentario,c;  
-  c=" pequeño ";
-  comentario= l.comentario_mp4.sintra_mp4; 
+  var listado, comentario;   
   listado=   l.mp4.sintra_mp4[0];  
-  if (w >  600) { listado=  l.mp4.sintra_mp4[1];  c= " mediana " ; }
-  if (w > 1000) { listado=  l.mp4.sintra_mp4[2];  c= " grande " ; }
+  if (w >  600) { listado=  l.mp4.sintra_mp4[1];  }
+  if (w > 1000) { listado=  l.mp4.sintra_mp4[2];   }
   
   switch (parametro) {
     case 1:
@@ -38,10 +41,9 @@ function cargar_sintra_video(incremento,parametro){
       if (i_listado>(listado.length-1)) i_listado=0;
       if (i_listado<0) i_listado=listado.length-1;       
       video.src=listado[i_listado];            
-      h2.innerHTML= "Videos de "+ ciudadT + " " + (i_listado +1) + " de " +listado.length ;//+ " carga " +  tiempo_carga + "msg";
-      h3.innerHTML=comentario[i_listado] ; //+ ' ' + i_listado +  "(horizontal"  +  c + ")" + " w=" + w + " h=" + h;  
-      //h2.innerHTML='Presentación de Videos de '+ ciudad + " " + tiempo_carga;
-      //h3.innerHTML=comentario[i_listado] + ' ' + i_listado +  "(video " +  c + ")" +" w=" + w + " h=" + h;            
+      h2.innerHTML= "Videos de "+ ciudadT + ": " + (i_listado +1) + " de " +listado.length ;
+      comentario= l.comentario_mp4.sintra_mp4_comentario; 
+      h3.innerHTML=Normaliza(comentario[i_listado]);
       tiempo_video=l.duracion.sintra_duracion[i_listado];
       break;
     case 2: break; // ????

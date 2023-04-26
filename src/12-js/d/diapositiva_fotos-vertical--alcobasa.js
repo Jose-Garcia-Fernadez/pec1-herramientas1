@@ -20,31 +20,32 @@ CambiarAutomaticamente();
 
 // Funciones que tienen que ser llamadas
 function CambiarAutomaticamente() { 
-  var t=Math.random()*2000+3000;
-  var inc=Math.floor( Math.random()*3+1);
-  cargar_alcobasa_v(inc,1);  
-  setTimeout(CambiarAutomaticamente, t);
+  cargar_alcobasa_v(1,1);  
+  setTimeout(CambiarAutomaticamente, 5000);
 }
+function Normaliza(s) {
+  var str=s.trim();
+  return (str.charAt(0).toUpperCase() + str.slice(1));
+}
+
 function cargar_alcobasa_v(incremento,parametro){
-  var w=img.clientWidth;
-  var listado, comentario,c;  
-  c=" pequeño ";
-  comentario= l.comentario_6.alcobasa_6; 
-  listado=   l.fotos.alcobasa_png_300_6;  
-  if (w >  600) { listado=  l.fotos.alcobasa_png_600_6;  c= " mediana " ; }
-  if (w > 1000) { listado=  l.fotos.alcobasa_png_900_6;  c= " grande " ; }
+  var w=img.clientHeight;
+  var listado, comentario;  
   
+  listado=   l.fotos.alcobasa_png_300_6;  
+  if (w >  600) { listado=  l.fotos.alcobasa_png_600_6; }
+  if (w > 1000) { listado=  l.fotos.alcobasa_png_900_6; }  
   switch (parametro) {
     case 1:
       i_listado=i_listado+incremento;
       if (i_listado>(listado.length-1)) i_listado=0;
       if (i_listado<0) i_listado=listado.length-1;       
       img.src=listado[i_listado];      
+    
+      h2.innerHTML= "Fotos de "+ ciudadT + ": " + (i_listado +1) + " de " +listado.length ;//+ " carga " +  tiempo_carga + "msg";
+      comentario= l.comentario_6.alcobasa_6_comentario; 
       img.alt= comentario[i_listado] + ' ' + i_listado;
-      h2.innerHTML= "Fotos de "+ ciudadT + " " + (i_listado +1) + " de " +listado.length ;//+ " carga " +  tiempo_carga + "msg";
-      h3.innerHTML=comentario[i_listado] ; //+ ' ' + i_listado +  "(horizontal"  +  c + ")" + " w=" + w + " h=" + h;  
-      //h3.innerHTML=comentario[i_listado] + ' ' + i_listado +  "(vertical " +  c + ")";      
-      //h2.innerHTML='Presentación de Fotos de '+ ciudad;
+      h3.innerHTML=Normaliza(comentario[i_listado]); //+ ' ' + i_listado +  "(horizontal"  +  c + ")" + " w=" + w + " h=" + h;  
       break;
     case 2: break; // ????
   }  

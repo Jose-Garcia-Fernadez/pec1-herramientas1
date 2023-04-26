@@ -1,5 +1,6 @@
 // Internet Explorer 10 y versiones anteriores nosintra_1 admiten el modo de pantalla completa./*div.addEventListener("click", () =>    { close_FullScreen();}) //function close_FullScreen() {closeFullscreen(div);}*/
 // Variables globales y  carga Inicial 
+
 import {l,tiempo_carga,escribir_tiempo} from '/src/12-js/listados.js';
 import {debug} from '/src/12-js/debug.js';
 // Variables globales de este fichero
@@ -20,21 +21,22 @@ CambiarAutomaticamente();
 
 // Funciones que tienen que ser llamadas
 function CambiarAutomaticamente() { 
-  var t=Math.random()*2000+3000;
-  var inc=Math.floor( Math.random()*3+1);
-  cargar_sintra_h(inc,1);  
-  setTimeout(CambiarAutomaticamente, t);
+  cargar_sintra_h(1,1);  
+  setTimeout(CambiarAutomaticamente, 5000);
+}
+function Normaliza(s) {
+  var str=s.trim();
+  return (str.charAt(0).toUpperCase() + str.slice(1));
 }
 
 function cargar_sintra_h(incremento,parametro){
-  var w=img.clientWidth,h=img.clientHeight;
-  var listado, comentario,c,tiempo; 
   
-  c=" pequeño ";
-  comentario= l.comentario_1.sintra_1; 
+  var w=img.clientWidth;
+  var listado, comentario,tiempo; 
+
   listado=   l.fotos.sintra_png_300_1;  
-  if (w >  600) { listado=  l.fotos.sintra_png_600_1;  c= " mediana " ; }
-  if (w > 1000) { listado=  l.fotos.sintra_png_900_1;  c= " grande " ; }
+  if (w >  600) { listado=  l.fotos.sintra_png_600_1;  }
+  if (w > 1000) { listado=  l.fotos.sintra_png_900_1;  }
   
   switch (parametro) {
     case 1:
@@ -46,10 +48,11 @@ function cargar_sintra_h(incremento,parametro){
         tiempo =(new Date()).getTime() -tiempo;
         escribir_tiempo(tiempo);        
       } 
-      img.src=listado[i_listado];      
-      img.alt= comentario[i_listado] + ' ' + i_listado;
-      h2.innerHTML= "Fotos de la "+ ciudadT + " " + (i_listado +1) + " de " +listado.length ;//+ " carga " +  tiempo_carga + "msg";
-      h3.innerHTML=comentario[i_listado] ; //+ ' ' + i_listado +  "(horizontal"  +  c + ")" + " w=" + w + " h=" + h;  
+      img.src=listado[i_listado]; 
+      h2.innerHTML= "Fotos de "+ ciudadT + ": " + (i_listado +1) + " de " +listado.length ;//+ " carga " +  tiempo_carga + "msg"; 
+      comentario= l.comentario_1.sintra_1_comentario;     
+      img.alt= comentario[i_listado] + ' ' + i_listado;  
+      h3.innerHTML=Normaliza(comentario[i_listado]); 
       break;
     case 2: break; // ????
   }  
