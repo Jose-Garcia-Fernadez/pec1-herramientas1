@@ -6,14 +6,14 @@
     "src/index.html"
   ],
   "scripts": {    
-    "parcel-produccion": "parcel  build    --target browsers        --dist-dir z:/destino --no-source-maps --no-cache",        
+    "parcel-produccion":  "parcel     build             --target browsers        --dist-dir z:/destino --no-source-maps --no-cache",        
     "parcel-desarrolloz": "parcel  -p 8125  --open --target browsers  --dist-dir z:/destino",
     "limpiezaz": "rimraf z:/destino .cache .cache-loader .parcel-cache",        
     "debug": "node src/12-js/ejecuta-debug-inline.js",
     "no-debug": "node src/12-js/ejecuta-debug-none.js",
     "copia": "node src/12-js/ejecuta-cmd.js",
-    "sdz": "npm-run-all debug copia limpiezaz parcel-desarrolloz lorem-por-buenos-en-destino",    
-    "sp": "npm-run-all no-debug copia  limpiezaz  parcel-produccion  lorem-por-buenos-en-destino",
+    "sdz": "npm-run-all debug    copia limpiezaz parcel-desarrolloz lorem-por-buenos-en-destino",    
+    "sp":  "npm-run-all no-debug copia limpiezaz parcel-produccion  lorem-por-buenos-en-destino",
     "lorem-por-buenos-en-destino":"node src/12-js/cambia-lorem-por-buenos-en-destino.js",
     "lorem-por-buenos-en-origen": "node src/12-js/cambia-lorem-por-buenos-en-origen.js",
     "buenos-por-lorem-en-origen": "node src/12-js/cambia-buenos-por-lorem-en-origen.js"
