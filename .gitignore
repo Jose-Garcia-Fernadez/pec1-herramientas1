@@ -11,9 +11,9 @@ node_modules/
 .parcel-cache
 destino/
 # ficheros batch
-*.cmd
+#*.cmd
 # ficheros docx
-*.docx
+#*.docx
 # ficheros xls
 
 
